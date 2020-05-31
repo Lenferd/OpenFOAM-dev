@@ -31,9 +31,14 @@ if (runTime.writeTime())
         sqrt((3.0/2.0)*magSqr(dev(sigma)))
     );
 
+//    Info<< "sigmaEq = " << sigmaEq << endl;
     Info<< "Max sigmaEq = " << max(sigmaEq).value()
         << endl;
-    Info<< "Max D = " << max(D).value() << endl;
+
+
+//    Info<< "D = " << D << endl;
+    // FIXME Hardcoded to specifiec beam end load case
+    Info<< "Max D = " << min(D).value() << endl;
 
 
     runTime.write();
